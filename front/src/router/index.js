@@ -51,28 +51,34 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '首页', icon: 'dashboard' }
     }]
   },
 
   {
-    path: '/example',
+    path: '/sys',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    redirect: '/sys/admin',
+    name: 'sysManger',
+    meta: { title: '系统管理', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'student',
+        name: 'student',
+        component: () => import('@/views/sys/admin.vue'),
+        meta: { title: '学生管理', icon: 'table' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'teacher',
+        name: 'teacher',
+        component: () => import('@/views/sys/teacher.vue'),
+        meta: { title: '教师管理', icon: 'table' }
+      },
+      {
+        path: 'courses',
+        name: 'courses',
+        component: () => import('@/views/sys/courses.vue'),
+        meta: { title: '课程管理', icon: 'tree' }
       }
     ]
   },
@@ -85,7 +91,7 @@ export const constantRoutes = [
         path: 'index',
         name: 'Form',
         component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        meta: { title: '成绩查询', icon: 'form' }
       }
     ]
   },
